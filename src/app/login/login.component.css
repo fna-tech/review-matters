@@ -1,8 +1,50 @@
 .container {
-    display: flex;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    /* grid-template-rows: 300px 1fr 300px; */
-    background-color: yellow;
-    /* height: 100%; */
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    grid-template-rows: 1fr 300px;
+    background-color: #f8ba00;
+    height: 100vh;
     margin: -8px;
+    grid-template-areas: 
+    "image_area content_area"
+    "image_area form_area";
+}
+
+img {
+    height: 100vh;
+    width: 100%;
+}
+
+.image_cls {
+    grid-area: image_area;
+    /* background-color: red; */
+}
+
+.content {
+    grid-area: content_area;
+    padding: 20px;
+    font-family: cursive;
+    /* text-align: right; */
+}
+
+h1 {
+    font-size: xxx-large;
+}
+
+.content_details {
+    font-size: larger;  
+}
+
+.login_form {
+    grid-area: form_area;
+    padding-right: 30px;
+}
+
+.mat-card-form {
+    max-width: 60%;
+    max-height: 33vh;
+}
+  
+.example-card-footer {
+    padding: 16px;
 }
