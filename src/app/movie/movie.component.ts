@@ -7,11 +7,14 @@ import { MatInput, MatInputModule } from '@angular/material/input';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { DatePipe, DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-movie',
   standalone: true,
-  imports: [HeaderComponent, MatIcon, MatInputModule, MatFormFieldModule ,MatButton, FormsModule],
+  imports: [HeaderComponent, FormsModule, DatePipe, DecimalPipe,
+    MatInputModule, MatFormFieldModule, MatButton, MatCardModule, MatIcon,],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.css'
 })

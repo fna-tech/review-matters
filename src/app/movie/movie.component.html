@@ -36,6 +36,24 @@
 
         <div >
             <h6>Reviews</h6>
+            <mat-card appearance="outlined">
+                @for(item of movie.reviews; track item) {
+                    <mat-card-header>
+                    <mat-card-title-group>
+                        <mat-card-title>{{item.author}}</mat-card-title>
+                        <mat-card-subtitle>{{item.published_on | date}}</mat-card-subtitle>
+                        <span>
+                            @for(fav of loopCount; track fav){
+                                <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite" class="fav_icon"></mat-icon>
+                            }
+                            {{item.rating | number: '1.1-2'}}</span>
+                    </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content>
+                        {{item.review}}
+                    </mat-card-content>
+                }
+              </mat-card>
         </div>
 
 
