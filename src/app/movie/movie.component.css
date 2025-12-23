@@ -1,0 +1,56 @@
+.detail_container {
+    display: grid;
+    grid-template-rows: 80px 3fr 2fr;
+    padding: 50px 150px;
+    gap: 40px;
+    /* grid-template-areas: 
+    'title'
+    'cover detail'
+    'review_detail'; */
+}
+
+.img_cls {
+    min-height: 350px;
+    min-width: 250px;
+
+}
+
+.title {
+    margin-bottom: 5px;
+}
+
+.rating_number {
+    padding: 32px;
+}
+
+.movie_detail {
+    display: flex;
+    gap: 40px;
+}
+
+/* .title {
+    grid-area: title;
+} */
+
+.cover {
+    grid-area: cover;
+}
+
+.input_form_review {
+    grid-area: detail;
+}
+
+.review_detail {
+    grid-area: review_detail;
+}
+
+.rating_detail {
+
+}
+
+.fav_icon {
+    font-size: 20px;
+    color: red;
+    width: 20px;
+    height: 17px;
+}

@@ -1,0 +1,44 @@
+
+    <app-header></app-header>
+    <div class="detail_container">
+        <div >
+            <h5 class="title">{{movie.name}}</h5>
+            <div class="review">
+                @for(i of loopCount; track i){
+                    <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite" class="fav_icon"></mat-icon>
+                } <span class="rating_number">{{movie.rating}}</span>
+            </div>
+        </div>
+        <div class="movie_detail">
+           
+            <img class="img_cls" [src]="movie.cover" alt="">
+        
+            <div class="rating_detail">
+                <span>Rate this Movie</span>
+                <form>
+                    <!-- <mat-form-feild> -->
+                        <mat-label>Name</mat-label>
+                        <input matInput>
+                    <!-- </mat-form-feild> -->
+        
+                    <!-- <mat-form-feild> -->
+                        <mat-label>Reviews</mat-label>
+                        <textarea matInput></textarea>
+                    <!-- </mat-form-feild> -->
+                    
+                    <button mat-button>Submit</button>
+                </form>
+
+            </div>
+            
+            
+        </div>
+
+        <div >
+            <h6>Reviews</h6>
+        </div>
+
+
+    </div>
+
+

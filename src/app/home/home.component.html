@@ -1,1 +1,69 @@
-<p>home works!</p>
+<app-header></app-header>
+<div class="container">
+    <div class="main_movies">
+        <div class="movie_details">
+            <h6 class="movie_heading">
+                <mat-divider class="heading_divider" [vertical]="true"></mat-divider>
+                TRENDING MOVIES
+            </h6>
+            <app-view-all class="view_all"></app-view-all>
+            <div class="main_content">
+                @for(item of trending; track item.id) {
+                    <div class="movie_item" (click)="movie_detail(item)">
+                        <img class="image_style" [src]="item.cover" alt="">
+                        <div class="movie_name">{{item.name}}</div>
+                        <div class="rating">
+                            @for(i of loopCount; track i){
+                                <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite" class="fav_icon"></mat-icon>
+                            }
+                            
+                            <span> {{item.rating}} </span>
+                        </div>
+                        
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="movie_details">
+            <h6 class="movie_heading">
+                <mat-divider class="heading_divider" [vertical]="true"></mat-divider>
+                POPULAR IN THEATERS
+            </h6>
+            <app-view-all class="view_all"></app-view-all>
+            <div class="main_content">
+                @for(item of popular; track item.id) {
+                    <div class="movie_item" (click)="movie_detail(item)">
+                        <img class="image_style" [src]="item.cover" alt="">
+                        <div class="movie_name">{{item.name}}</div>
+                        <div class="rating">
+                            @for(i of loopCount; track i){
+                                <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite" class="fav_icon"></mat-icon>
+                            } {{item.rating}}</div>
+                        
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <mat-divider class="divider" [vertical]="true"></mat-divider>
+    <div>
+        <h6>
+            <mat-divider class="heading_divider" [vertical]="true"></mat-divider>
+            ALL TIME POPULAR
+        </h6>
+        <div class="movie_list">
+            @for(item of popular; track item.id){
+                <div class="popular_movie" (click)="movie_detail(item)">{{item.name}}</div>
+                <div class="popular_movie" (click)="movie_detail(item)">
+                    @for(i of loopCount; track i){
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite" class="fav_icon"></mat-icon>
+                    }
+                </div>
+                <div class="popular_movie" (click)="movie_detail(item)">{{item.rating}}</div>
+            }
+        </div>
+        <app-view-all></app-view-all>
+        
+    </div>
+
+</div>

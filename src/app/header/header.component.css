@@ -1,0 +1,21 @@
+.container {
+    background-color: #f8ba00;
+    display: grid;
+    max-height: 10vh;
+    grid-template-columns: 4fr 1fr;
+}
+
+.header_review {
+    font-weight: bold;
+    padding: 20px 20px;
+    font-size: larger;
+    font-family: auto;
+    cursor: pointer;
+}
+
+.logout{
+    font-weight: bold;
+    text-align: right;
+    padding: 20px 20px;
+    cursor: pointer;
+}
