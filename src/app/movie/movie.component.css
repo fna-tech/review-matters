@@ -46,7 +46,7 @@
 
 .fav_icon {
     font-size: 20px;
-    color: red;
+    /* color: red; */
     width: 20px;
     height: 17px;
 }
@@ -75,5 +75,13 @@ mat-form-field {
 
 .cusor_pointer {
     cursor: pointer;
+    color: #d0cdcd;
+}
+
+.red {
+    color: red;
+}
+
+.grey {
     color: #d0cdcd;
 }

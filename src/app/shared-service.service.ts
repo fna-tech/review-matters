@@ -6,6 +6,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SharedServiceService {
+  postReview(value: any) {
+    console.log(value);
+    return true;
+  }
   
   isLoggedIn: any = false;
 
