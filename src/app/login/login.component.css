@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 500px 1fr;
     grid-template-rows: 1fr 300px;
+    gap: 40px;
     background-color: #f8ba00;
     height: 100vh;
     margin: -8px;
@@ -22,9 +23,10 @@ img {
 
 .content {
     grid-area: content_area;
-    padding: 20px;
-    font-family: cursive;
-    /* text-align: right; */
+    padding: 60px 60px 0 0;
+    font-family: sans-serif;
+    align-content: space-around;
+    text-align: end;
 }
 
 h1 {
@@ -32,19 +34,22 @@ h1 {
 }
 
 .content_details {
-    font-size: larger;  
+    font-size: 25px;
+    line-height: 40px;
 }
 
 .login_form {
     grid-area: form_area;
-    padding-right: 30px;
+    padding-right: 60px;
+    display: flex;
+    justify-content: end;
 }
 
 .mat-card-form {
-    max-width: 60%;
-    max-height: 33vh;
+    min-width: 60%;
+    max-height: 30vh;
 }
   
 .example-card-footer {
-    padding: 16px;
+    padding: 0px 16px 16px;
 }

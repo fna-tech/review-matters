@@ -38,4 +38,11 @@ export class MovieComponent implements OnInit {
    
   }
 
+  rateMovie(rating: number){
+    console.log(rating);
+    const user_rating = rating+1;
+
+    console.log(user_rating);
+  }
+
 }

@@ -14,27 +14,31 @@
             <img class="img_cls" [src]="movie.cover" alt="">
         
             <div class="rating_detail">
-                <span>Rate this Movie</span>
+                <span class="rating_title">Rate this Movie</span>
                 <form>
-                    <!-- <mat-form-feild> -->
+                    <mat-form-field>
                         <mat-label>Name</mat-label>
                         <input matInput>
-                    <!-- </mat-form-feild> -->
-        
-                    <!-- <mat-form-feild> -->
-                        <mat-label>Reviews</mat-label>
+                    </mat-form-field>
+                    <div class="padding_btm">
+                        <mat-label>Rating</mat-label>
+                        <div>
+                            @for(i of loopCount; track i){
+                                <mat-icon class="fav_icon cusor_pointer" (click)="rateMovie(i)">favorite</mat-icon>
+                            }
+                        </div>
+                    </div>
+                    <mat-form-field>
+                        <mat-label>Review</mat-label>
                         <textarea matInput></textarea>
-                    <!-- </mat-form-feild> -->
-                    
-                    <button mat-button>Submit</button>
-                </form>
+                    </mat-form-field>
 
+                    <button mat-flat-button>Submit</button>
+                </form>
             </div>
-            
-            
         </div>
 
-        <div >
+        <div>
             <h6>Reviews</h6>
             <mat-card appearance="outlined">
                 @for(item of movie.reviews; track item) {
