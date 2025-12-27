@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
@@ -19,21 +19,22 @@ import { SharedServiceService } from '../shared-service.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup | any;
+  invalidCred: boolean = false;
 
   constructor(private router: Router, private sharedService: SharedServiceService){}
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      'username' : new FormControl(),
-      'password' : new FormControl()
+      'username' : new FormControl(null, [Validators.required]),
+      'password' : new FormControl(null, [Validators.required, Validators.minLength(6)])
     });
   }
 
   image_movies = 'movie_picture.jpeg'
 
   homePage(): void {
-    console.log(this.loginForm.value);
-    (this.sharedService.getLoginDetails(this.loginForm.value)) ? this.router.navigate(['/home']) : null;
+    console.log(this.loginForm);
+    (this.sharedService.getLoginDetails(this.loginForm.value)) ? this.router.navigate(['/home']) : this.invalidCred = true;
   
   }
 

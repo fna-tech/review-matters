@@ -16,7 +16,7 @@ export class SharedServiceService {
   constructor(private http: HttpClient) { }
 
   getLoginDetails(formDetail: LoginDetail){
-    if (formDetail.username.toLowerCase() === 'femina' && formDetail.password === 'azmi') {
+    if (formDetail.username.toLowerCase() === 'femina' && formDetail.password === '123456') {
       this.isLoggedIn = true;
       return true 
     } else {

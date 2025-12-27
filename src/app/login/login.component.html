@@ -14,23 +14,36 @@
    <div class="login_form">
     <mat-card class="mat-card-form" appearance="raised">
       <mat-card-content>
+        @if(invalidCred){
+          <mat-error class="error_padding">Invalid Credetials</mat-error>
+        }
         <form [formGroup]="loginForm" >
           <p>
           <mat-form-field appearance="outline" >
             <mat-label>Username</mat-label>
             <input formControlName="username" matInput >
+            @if(loginForm.get('username').invalid && loginForm.get('username').errors.required){
+              <mat-error>Please enter the user name</mat-error>
+            }
           </mat-form-field>
         </p>
         <p>
           <mat-form-field appearance="outline" >
             <mat-label>Password</mat-label>
             <input type="password" formControlName="password" matInput >
+            @if(loginForm.get('password').invalid && loginForm.get('password').errors.required) {
+              <mat-error>Please enter your password</mat-error>
+
+            } 
+            @else if(loginForm.get('password').invalid && loginForm.get('password').errors.minlength) {
+              <mat-error>Password should be atleast 6 characters</mat-error>
+            }
           </mat-form-field>
           </p>
         </form>
       </mat-card-content>
       <mat-card-footer class="example-card-footer">
-        <button mat-flat-button color="accent" (click)="homePage()">Login</button>
+        <button mat-flat-button color="accent" (click)="homePage()" [disabled]="loginForm.invalid">Login</button>
       </mat-card-footer>
     </mat-card>
 

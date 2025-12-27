@@ -4,7 +4,7 @@
     grid-template-rows: 1fr 300px;
     gap: 40px;
     background-color: #f8ba00;
-    height: 100vh;
+    min-height: 100vh;
     margin: -8px;
     grid-template-areas: 
     "image_area content_area"
@@ -47,9 +47,13 @@ h1 {
 
 .mat-card-form {
     min-width: 60%;
-    max-height: 30vh;
+    max-height: 35vh;
 }
   
 .example-card-footer {
-    padding: 0px 16px 16px;
+    padding: 10px 16px 16px;
+}
+
+.error_padding {
+    padding-bottom: 10px;
 }

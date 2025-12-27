@@ -14,7 +14,8 @@
                         <div class="movie_name">{{item.name}}</div>
                         <div class="rating">
                             @for(i of loopCount; track i){
-                                <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite" class="fav_icon"></mat-icon>
+                                <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite" class="fav_icon"
+                                appFavorites [rating]="item.rating" [item]="i+1"></mat-icon>
                             }
                             
                             <span> {{item.rating}} </span>
@@ -37,7 +38,8 @@
                         <div class="movie_name">{{item.name}}</div>
                         <div class="rating">
                             @for(i of loopCount; track i){
-                                <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite" class="fav_icon"></mat-icon>
+                                <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite" class="fav_icon"
+                                appFavorites [rating]="item.rating" [item]="i+1"></mat-icon>
                             } {{item.rating}}</div>
                         
                     </div>
@@ -56,7 +58,8 @@
                 <div class="popular_movie" (click)="movie_detail(item)">{{item.name}}</div>
                 <div class="popular_movie" (click)="movie_detail(item)">
                     @for(i of loopCount; track i){
-                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite" class="fav_icon"></mat-icon>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite" class="fav_icon"
+                        appFavorites [rating]="item.rating" [item]="i+1"></mat-icon>
                     }
                 </div>
                 <div class="popular_movie" (click)="movie_detail(item)">{{item.rating}}</div>

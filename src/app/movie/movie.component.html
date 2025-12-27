@@ -5,8 +5,8 @@
             <h5 class="title">{{movie.name}}</h5>
             <div class="review">
                 @for(i of loopCount; track i){
-                    <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite" 
-                    class="fav_icon" [ngClass]="{red: i+1 <= movie.rating, grey: i+1 > movie.rating }"></mat-icon>
+                    <mat-icon aria-label="favorite icon" fontIcon="favorite" 
+                    class="fav_icon" appFavorites [rating]="movie.rating" [item]="i+1"></mat-icon>
                 } 
                 <span class="rating_number">{{movie.rating}}</span>
             </div>
@@ -23,7 +23,8 @@
                         <input matInput formControlName="author">
                     </mat-form-field>
                     <div class="padding_btm">
-                        <mat-label>Rating</mat-label>
+                        <mat-label required>Rating <span matTextSuffix>*</span></mat-label>
+                        
                         <div>
                             @for(i of loopCount; track i){
                                 <mat-icon class="fav_icon cusor_pointer" (click)="rateMovie(i)"
@@ -36,7 +37,7 @@
                         <textarea matInput formControlName="review"></textarea>
                     </mat-form-field>
 
-                    <button mat-flat-button type="submit">Submit</button>
+                    <button mat-flat-button type="submit" [disabled]="review_form.invalid">Submit</button>
                 </form>
             </div>
         </div>
@@ -51,8 +52,8 @@
                         <mat-card-subtitle>{{item.published_on | date}}</mat-card-subtitle>
                         <span>
                             @for(fav of loopCount; track fav){
-                                <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite" 
-                                class="fav_icon" [ngClass]="{red: fav+1 <= movie.rating, grey: fav+1 > movie.rating }"></mat-icon>
+                                <mat-icon aria-label="favorite icon" fontIcon="favorite" 
+                                class="fav_icon" appFavorites [rating]="item.rating" [item]="fav+1"></mat-icon>
                             }
                             {{item.rating | number: '1.1-2'}}</span>
                     </mat-card-title-group>

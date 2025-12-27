@@ -5,11 +5,12 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ViewAllComponent } from '../view-all/view-all.component';
 import { MatIconModule } from '@angular/material/icon';
 import { NavigationExtras, Router } from '@angular/router';
+import { FavoritesDirective } from '../favorites.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, MatDividerModule, ViewAllComponent, MatIconModule],
+  imports: [HeaderComponent, MatDividerModule, ViewAllComponent, MatIconModule, FavoritesDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
